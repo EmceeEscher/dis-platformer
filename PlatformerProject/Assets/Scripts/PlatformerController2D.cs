@@ -70,6 +70,7 @@ public class PlatformerController2D : MonoBehaviour
 
 		Vector2 vel = rb2d.velocity;
 
+
 		if (canMove) {
 			vel.x = input.x * speed;
 
@@ -82,6 +83,10 @@ public class PlatformerController2D : MonoBehaviour
 		rb2d.velocity = vel;
 
 	}
+    public void FlipGravity() {
+        Debug.Log("flip gravity");
+
+    }
 
 	Vector2 ApplyJump (Vector2 vel)
 	{
