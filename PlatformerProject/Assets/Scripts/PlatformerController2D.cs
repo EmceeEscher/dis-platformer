@@ -54,13 +54,18 @@ public class PlatformerController2D : MonoBehaviour
 
         if (canMove) vel.x = inputMove.x * speed;
 
-        vel.y += -gravity * Time.deltaTime;
+        switch (PlayerStatus.physicalState){
+            case PlayerStatus.States.Solid:
+                vel.y += -gravity * Time.deltaTime;
+
+                break;
+            case PlayerStatus.States.Gas:
+
+                vel.y += gravity * Time.deltaTime;
+                break;
+        }
         rb2d.velocity = vel;
 
-        if (inputPhase) isSolid = !isSolid;
-
-        if (isSolid) { rb2d.gravityScale = (float)(-0.1 * gravity - .1); }
-        else { rb2d.gravityScale = 1; }
     }
 
     /// <summary>

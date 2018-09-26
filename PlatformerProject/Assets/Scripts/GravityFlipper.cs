@@ -4,21 +4,30 @@ using UnityEngine;
 
 public class GravityFlipper : MonoBehaviour {
 
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            PlatformerController2D controller = other.gameObject.GetComponent<PlatformerController2D>();
-            controller.FlipGravity();
+            Debug.Log("Entered temp zone");
+            PlayerStatus.physicalState = PlayerStatus.States.Gas;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            Debug.Log("Exited temp zone");
+            PlayerStatus.physicalState = PlayerStatus.States.Solid;
         }
     }
     // Use this for initialization
     void Start () {
-		
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+
 	}
 }
