@@ -14,7 +14,12 @@ public class PlayerStatus {
     private static bool locked;
 
     public static void SwitchStates() {
-        
+        if (physicalState == PlayerStatus.States.Solid) {
+            physicalState = PlayerStatus.States.Gas;
+        }
+        else {
+            physicalState = PlayerStatus.States.Solid;
+        }
     }
 
     public static void SetToState(States newState) {
@@ -23,11 +28,13 @@ public class PlayerStatus {
 
     public static void LockSwitch()
     {
-
+        //prevent player from switching states
+        locked = true;
     }
 
     public static void UnlockSwitch()
     {
-
+        //unlock ability to switch states
+        locked = false;
     }
 }

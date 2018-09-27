@@ -9,16 +9,18 @@ public class GravityFlipper : MonoBehaviour {
     {
         if (other.CompareTag("Player"))
         {
+            PlayerStatus.LockSwitch();
             Debug.Log("Entered temp zone");
-            PlayerStatus.physicalState = PlayerStatus.States.Gas;
+            PlayerStatus.SwitchStates();
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
+            PlayerStatus.UnlockSwitch();
             Debug.Log("Exited temp zone");
-            PlayerStatus.physicalState = PlayerStatus.States.Solid;
+            PlayerStatus.SwitchStates();
         }
     }
     // Use this for initialization

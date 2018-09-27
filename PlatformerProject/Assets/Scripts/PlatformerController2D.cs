@@ -30,7 +30,7 @@ public class PlatformerController2D : MonoBehaviour
     [Tooltip("Downwards acceleration.")]
     [SerializeField] float gravity = 40;
 
-    bool isSolid = true;
+
 
     Rigidbody2D rb2d = null;
     SpriteRenderer sr = null;
@@ -42,7 +42,7 @@ public class PlatformerController2D : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
-        isSolid = true;
+        //PlayerStatus.SetToState(PlayerStatus.States.Gas); //Set Start state
     }
 
     /// <summary>
@@ -51,7 +51,6 @@ public class PlatformerController2D : MonoBehaviour
     void FixedUpdate()
     {
         Vector2 vel = rb2d.velocity;
-
         if (canMove) vel.x = inputMove.x * speed;
 
         switch (PlayerStatus.physicalState){
@@ -65,6 +64,9 @@ public class PlatformerController2D : MonoBehaviour
                 break;
         }
         rb2d.velocity = vel;
+
+
+
 
     }
 

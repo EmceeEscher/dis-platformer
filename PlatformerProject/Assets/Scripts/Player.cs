@@ -8,9 +8,7 @@ using UnityEngine;
 /// </summary>
 [RequireComponent(typeof(PlatformerController2D))]
 public class Player : MonoBehaviour {
-
-
-
+    //Maybe use Singleton?
     PlatformerController2D controller;
     SpriteRenderer[] sr;
 
@@ -18,7 +16,7 @@ public class Player : MonoBehaviour {
     void Awake() {
         controller = GetComponent<PlatformerController2D>();
         sr = GetComponentsInChildren<SpriteRenderer>();
-        PlayerStatus.physicalState = PlayerStatus.States.Solid;
+        PlayerStatus.physicalState = PlayerStatus.States.Solid; // Define State start
     }
 	
     /// <summary>
