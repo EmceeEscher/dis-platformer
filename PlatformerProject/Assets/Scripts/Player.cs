@@ -8,21 +8,15 @@ using UnityEngine;
 /// </summary>
 [RequireComponent(typeof(PlatformerController2D))]
 public class Player : MonoBehaviour {
-
-    public enum PlayerStatus {
-        Solid,
-        Gas,
-        Dead,
-    }
-
+    //Maybe use Singleton?
     PlatformerController2D controller;
     SpriteRenderer[] sr;
-    PlayerStatus state;
+
 
     void Awake() {
         controller = GetComponent<PlatformerController2D>();
         sr = GetComponentsInChildren<SpriteRenderer>();
-        state = PlayerStatus.Solid;
+        PlayerStatus.physicalState = PlayerStatus.States.Solid; // Define State start
     }
 	
     /// <summary>

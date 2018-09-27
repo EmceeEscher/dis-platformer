@@ -12,8 +12,10 @@ using UnityEngine;
 /// Script for general purpose 2D controls for any object that can move and jump when grounded.
 /// Based on Benno Lueders' PlatformerController2D.cs script.
 /// </summary>
+
 [RequireComponent(typeof(Rigidbody2D))]
-public class PlatformerController2D : MonoBehaviour {
+public class PlatformerController2D : MonoBehaviour
+{
 
     [HideInInspector] public Vector2 inputMove;
     [HideInInspector] public bool inputPhase;
@@ -28,42 +30,54 @@ public class PlatformerController2D : MonoBehaviour {
     [Tooltip("Downwards acceleration.")]
     [SerializeField] float gravity = 40;
 
-    bool isSolid = true;
+
 
     Rigidbody2D rb2d = null;
     SpriteRenderer sr = null;
     Animator anim = null;
 
-    void Start() {
+    void Start()
+    {
         canMove = true;
         rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
-        isSolid = true;
+        //PlayerStatus.SetToState(PlayerStatus.States.Gas); //Set Start state
     }
 
     /// <summary>
-    /// Controls the basic update of the controller. This uses fixed update, since the movement is physics driven and has to be synched with the physics step.
+    /// Controls the basic update of the controller. This uses fixed update, since the movement 
+    /// is physics driven and has to be synched with the physics step.
     /// </summary>
-    void FixedUpdate() {
+    void FixedUpdate()
+    {
         Vector2 vel = rb2d.velocity;
-
+        if (inputPhase) PlayerStatus.SwitchStates();
         if (canMove) vel.x = inputMove.x * speed;
 
-        vel.y += -gravity * Time.deltaTime;
+        switch (PlayerStatus.physicalState){
+            case PlayerStatus.States.Solid:
+                vel.y += -gravity * Time.deltaTime;
+
+                break;
+            case PlayerStatus.States.Gas:
+
+                vel.y += gravity * Time.deltaTime;
+                break;
+        }
         rb2d.velocity = vel;
 
-        if (inputPhase) isSolid = !isSolid;
+        
 
-        if (isSolid) { rb2d.gravityScale = (float)(-0.1 * gravity - .1); }
-        else { rb2d.gravityScale = 1; }
+
     }
 
     /// <summary>
     /// Pushback the object controlled by this instance with the specified force.
     /// </summary>
     /// <param name="force">Force to push the character back</param>
-    public void Pushback(Vector2 force) {
+    public void Pushback(Vector2 force)
+    {
         rb2d.velocity = force;
     }
 }

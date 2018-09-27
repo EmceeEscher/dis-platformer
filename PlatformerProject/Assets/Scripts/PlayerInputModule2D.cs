@@ -21,7 +21,7 @@ public class PlayerInputModule2D : MonoBehaviour {
             inputMove.Normalize();
         }
         controller.inputMove = inputMove;
-
+        //TODO: Add way to lock switching states when in the zone
         bool inputPhase = Input.GetKeyDown("space");
         controller.inputPhase = inputPhase;
     }
