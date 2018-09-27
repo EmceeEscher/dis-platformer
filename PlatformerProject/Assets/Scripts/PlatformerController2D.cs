@@ -46,11 +46,13 @@ public class PlatformerController2D : MonoBehaviour
     }
 
     /// <summary>
-    /// Controls the basic update of the controller. This uses fixed update, since the movement is physics driven and has to be synched with the physics step.
+    /// Controls the basic update of the controller. This uses fixed update, since the movement 
+    /// is physics driven and has to be synched with the physics step.
     /// </summary>
     void FixedUpdate()
     {
         Vector2 vel = rb2d.velocity;
+        if (inputPhase) PlayerStatus.SwitchStates();
         if (canMove) vel.x = inputMove.x * speed;
 
         switch (PlayerStatus.physicalState){
@@ -65,7 +67,7 @@ public class PlatformerController2D : MonoBehaviour
         }
         rb2d.velocity = vel;
 
-
+        
 
 
     }

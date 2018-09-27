@@ -29,6 +29,7 @@ public class PlayerStatus {
     public static void LockSwitch()
     {
         //prevent player from switching states
+        
         locked = true;
     }
 
