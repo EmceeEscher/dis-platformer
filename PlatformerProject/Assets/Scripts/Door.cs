@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorController : MonoBehaviour {
+public class Door : MonoBehaviour {
 
     public bool isHorizontal = true;
     public float openingDistance = 100f;

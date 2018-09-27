@@ -6,7 +6,7 @@ public class Button : MonoBehaviour {
 
 	public Sprite upSprite;
 	public Sprite downSprite;
-    public DoorController doorController;
+    public Door doorController;
     public float doorCloseDelay = 1f;
 
 	SpriteRenderer sr;
