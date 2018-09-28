@@ -5,15 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/PlayerTestScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/FanTutorial.unity
     guid: abfc01d72a1f9014ebb97bfaf9b04ff4
   - enabled: 1
-    path: Assets/Scenes/ButtonTutorialLevel.unity
-    guid: 5f061a364acc54adeb0d618040efd455
+    path: Assets/Scenes/ButtonTutorialWithTiles.unity
+    guid: a569f926961844e6c87305b36c6dc9d1
   - enabled: 1
     path: Assets/Scenes/TempZoneLevel.unity
     guid: e9069c90548e8474d88c17761ec8f854
