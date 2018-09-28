@@ -11,7 +11,7 @@ public class PlayerStatus {
     }
     public static States physicalState;
     //Listens for input  and functions that lock and unlock states. Static functions
-    private static bool locked;
+    private static bool locked = false;
 
     public static void SwitchStates() {
         if (physicalState == PlayerStatus.States.Solid) {
@@ -26,10 +26,13 @@ public class PlayerStatus {
         physicalState = newState;
     }
 
+    public static bool StateLocked() {
+        return locked;
+    }
+
     public static void LockSwitch()
     {
         //prevent player from switching states
-        
         locked = true;
     }
 
@@ -38,4 +41,5 @@ public class PlayerStatus {
         //unlock ability to switch states
         locked = false;
     }
+
 }

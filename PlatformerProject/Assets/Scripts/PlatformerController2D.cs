@@ -53,7 +53,9 @@ public class PlatformerController2D : MonoBehaviour
     {
         Vector2 vel = rb2d.velocity;
         if (inputPhase) PlayerStatus.SwitchStates();
-        if (canMove) vel.x = inputMove.x * speed;
+        if (canMove)
+            if(!PlayerStatus.StateLocked())
+                vel.x = inputMove.x * speed;
 
         switch (PlayerStatus.physicalState){
             case PlayerStatus.States.Solid:
@@ -62,7 +64,7 @@ public class PlatformerController2D : MonoBehaviour
                 break;
             case PlayerStatus.States.Gas:
 
-                vel.y += gravity * Time.deltaTime;
+                vel.y += gravity * Time.deltaTime * (float)0.3;
                 break;
         }
         rb2d.velocity = vel;
@@ -70,14 +72,5 @@ public class PlatformerController2D : MonoBehaviour
         
 
 
-    }
-
-    /// <summary>
-    /// Pushback the object controlled by this instance with the specified force.
-    /// </summary>
-    /// <param name="force">Force to push the character back</param>
-    public void Pushback(Vector2 force)
-    {
-        rb2d.velocity = force;
     }
 }
