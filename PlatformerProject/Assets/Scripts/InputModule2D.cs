@@ -7,7 +7,7 @@ using UnityEngine;
 /// Based on Benno Lueders' PlayerInputModule2D.cs script.
 /// </summary>
 [RequireComponent(typeof(PlatformerController2D))]
-public class PlayerInputModule2D : MonoBehaviour {
+public class InputModule2D : MonoBehaviour {
 
     PlatformerController2D controller;
 

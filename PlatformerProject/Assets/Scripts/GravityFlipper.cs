@@ -5,22 +5,24 @@ using UnityEngine;
 public class GravityFlipper : MonoBehaviour {
 
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (other.CompareTag("Player"))
+        PlatformerController2D objectWithStates = collider.GetComponent<PlatformerController2D>();
+        if (objectWithStates != null)
         {
-            PlayerStatus.LockSwitch();
+            objectWithStates.LockSwitch();
             Debug.Log("Entered temp zone");
-            PlayerStatus.SwitchStates();
+            objectWithStates.SwitchStates();
         }
     }
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D collider)
     {
-        if (collision.CompareTag("Player"))
+        PlatformerController2D objectWithStates = collider.GetComponent<PlatformerController2D>();
+        if (objectWithStates != null)
         {
-            PlayerStatus.UnlockSwitch();
+            objectWithStates.UnlockSwitch();
             Debug.Log("Exited temp zone");
-            PlayerStatus.SwitchStates();
+            objectWithStates.SwitchStates();
         }
     }
     // Use this for initialization
