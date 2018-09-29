@@ -40,7 +40,8 @@ public class PlatformerController2D : MonoBehaviour
     [Tooltip("Downwards acceleration.")]
     [SerializeField] float gravity = 40;
 
-
+    [Tooltip("Upwards acceleration.")]
+    [SerializeField] float floatiness = 0.3f;
 
     Rigidbody2D rb2d = null;
     SpriteRenderer sr = null;
@@ -74,7 +75,7 @@ public class PlatformerController2D : MonoBehaviour
                 break;
             case State.Gas:
 
-                vel.y += gravity * Time.deltaTime * (float)0.3;
+                vel.y += gravity * Time.deltaTime * floatiness;
                 break;
         }
         rb2d.velocity = vel;

@@ -22,7 +22,6 @@ public class GravityFlipper : MonoBehaviour {
         {
             objectWithStates.UnlockSwitch();
             Debug.Log("Exited temp zone");
-            objectWithStates.SwitchStates();
         }
     }
     // Use this for initialization
