@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,24 +7,28 @@ using UnityEngine;
 /// Based on Benno Lueders' Player.cs script.
 /// </summary>
 [RequireComponent(typeof(PlatformerController2D))]
-public class Player : MonoBehaviour {
+public class Player : MonoBehaviour
+{
     //Maybe use Singleton?
     PlatformerController2D controller;
     SpriteRenderer sr;
 
-    void Awake() {
+    void Awake()
+    {
         controller = GetComponent<PlatformerController2D>();
         sr = GetComponent<SpriteRenderer>();
     }
-	
+
     /// <summary>
     /// Destroy the player and spawn the death animation.
     /// </summary>
-    public void Die() {
+    public void Die()
+    {
         Destroy(gameObject);
     }
 
-    public IEnumerator RunTeleportAnimation(float timeToFade) {
+    public IEnumerator RunTeleportAnimation(float timeToFade)
+    {
         for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / timeToFade)
         {
             Color newColor = new Color(1, 1, 1, Mathf.Lerp(1f, 0f, t));
