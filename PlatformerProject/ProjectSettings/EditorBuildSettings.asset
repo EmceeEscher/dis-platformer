@@ -12,11 +12,14 @@ EditorBuildSettings:
     path: Assets/Scenes/ButtonTutorialLevel.unity
     guid: a569f926961844e6c87305b36c6dc9d1
   - enabled: 1
-    path: Assets/Scenes/GravFlipperAndButtonLevel.unity
-    guid: c8813e2b35c444c68b398216c0ecb334
+    path: Assets/Scenes/ButtonTutorialLevel2.unity
+    guid: c1ff9eddc664141938995d1a0f247a9a
   - enabled: 1
     path: Assets/Scenes/FanTutorial.unity
     guid: abfc01d72a1f9014ebb97bfaf9b04ff4
+  - enabled: 1
+    path: Assets/Scenes/GravFlipperAndButtonLevel.unity
+    guid: c8813e2b35c444c68b398216c0ecb334
   - enabled: 1
     path: Assets/Scenes/TempZoneLevel.unity
     guid: e9069c90548e8474d88c17761ec8f854

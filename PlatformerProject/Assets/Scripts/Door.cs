@@ -6,6 +6,7 @@ public class Door : MonoBehaviour {
 
     public bool isHorizontal = true;
     public float openingDistance = 100f;
+    public bool flipDirection = false;
 
     Vector2 startingPosition;
     Vector2 destinationPosition;
@@ -19,6 +20,9 @@ public class Door : MonoBehaviour {
 	void Start () {
         startingPosition = transform.position;
         destinationPosition = startingPosition;
+        if (flipDirection) {
+            openingDistance = -openingDistance;
+        }
         if (isHorizontal) {
             destinationPosition.x += openingDistance;
         } else {

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,7 +17,6 @@ public class Player : MonoBehaviour
     {
         controller = GetComponent<PlatformerController2D>();
         sr = GetComponent<SpriteRenderer>();
-        PlayerStatus.physicalState = PlayerStatus.States.Solid; // Define State start
     }
 
     /// <summary>

@@ -10,6 +10,8 @@ using UnityEngine;
 public class InputModule2D : MonoBehaviour {
 
     PlatformerController2D controller;
+    int gravityToggleCounter = 0;
+
 
     void Start() {
         controller = GetComponent<PlatformerController2D>();
@@ -21,8 +23,11 @@ public class InputModule2D : MonoBehaviour {
             inputMove.Normalize();
         }
         controller.inputMove = inputMove;
-        //TODO: Add way to lock switching states when in the zone
         bool inputPhase = Input.GetKeyDown("space");
+        if (inputPhase) {
+            gravityToggleCounter++;
+            if(GravityCounterPanel.instance != null) GravityCounterPanel.instance.SetCount(gravityToggleCounter);
+        }
         controller.inputPhase = inputPhase;
     }
 }

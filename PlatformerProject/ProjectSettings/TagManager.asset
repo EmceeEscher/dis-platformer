@@ -45,3 +45,6 @@ TagManager:
   - name: Player
     uniqueID: 3458730005
     locked: 0
+  - name: Fadeout
+    uniqueID: 2836786467
+    locked: 0
