@@ -72,11 +72,8 @@ public class PlatformerController2D : MonoBehaviour
         switch (physicalState){
             case State.Solid:
                 vel.y += -gravity * Time.deltaTime;
-
                 break;
-            case State.Gas:
-
-
+            case State.Gas:            
                 vel.y += gravity * Time.deltaTime * floatiness;
 
                 break;

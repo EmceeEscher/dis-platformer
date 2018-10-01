@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/StartTutorialLevel.unity
     guid: 6c2a62c5453be40c6a5ad5aef9822365
   - enabled: 1
+    path: Assets/Scenes/FanTutorial.unity
+    guid: abfc01d72a1f9014ebb97bfaf9b04ff4
+  - enabled: 1
     path: Assets/Scenes/ButtonTutorialLevel.unity
     guid: a569f926961844e6c87305b36c6dc9d1
   - enabled: 1
