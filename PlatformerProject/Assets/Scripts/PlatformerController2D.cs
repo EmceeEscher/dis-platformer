@@ -71,12 +71,7 @@ public class PlatformerController2D : MonoBehaviour
                 vel.y += -gravity * Time.deltaTime;
                 break;
             case State.Gas:            
-<<<<<<< HEAD
-                vel.y += gravity * Time.deltaTime * floatiness;
-
-=======
                 vel.y += gravity * Time.deltaTime;
->>>>>>> e2830756512b5f54d943480c3148ee0df4a80a2e
                 break;
         }
         rb2d.velocity = vel;
