@@ -15,7 +15,6 @@ public class Player : MonoBehaviour {
     void Awake() {
         controller = GetComponent<PlatformerController2D>();
         sr = GetComponent<SpriteRenderer>();
-        PlayerStatus.physicalState = PlayerStatus.States.Solid; // Define State start
     }
 	
     /// <summary>
