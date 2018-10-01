@@ -20,8 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4264303250905634}
   - component: {fileID: 212999245310687232}
-  - component: {fileID: 61618448872805048}
   - component: {fileID: 114887154447529004}
+  - component: {fileID: 60695032910711866}
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
@@ -36,14 +36,14 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1206849173309732}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.79, y: -4.23, z: 0}
+  m_LocalPosition: {x: -4.73, y: -4.23, z: 0}
   m_LocalScale: {x: 4.504663, y: 2.4272656, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61618448872805048
-BoxCollider2D:
+--- !u!60 &60695032910711866
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -54,7 +54,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.00052523613, y: -0.06737617}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -64,9 +64,14 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.31894952, y: 0.081848115}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.085162506, y: -0.033993766}
+      - {x: -0.110124916, y: -0.06479286}
+      - {x: -0.16, y: -0.13}
+      - {x: 0.16, y: -0.13}
+      - {x: 0.11428118, y: -0.06399389}
+      - {x: 0.09181247, y: -0.033994157}
 --- !u!114 &114887154447529004
 MonoBehaviour:
   m_ObjectHideFlags: 1
