@@ -26,10 +26,6 @@ public class PlayerStatus {
         physicalState = newState;
     }
 
-    public static bool StateLocked() {
-        return locked;
-    }
-
     public static void LockSwitch()
     {
         //prevent player from switching states

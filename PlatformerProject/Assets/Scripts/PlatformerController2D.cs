@@ -17,6 +17,16 @@ using UnityEngine;
 public class PlatformerController2D : MonoBehaviour
 {
 
+    public enum State
+    {
+        Solid,
+        Gas,
+        Dead,
+    }
+    public State physicalState;
+    //Listens for input  and functions that lock and unlock states
+    private bool locked;
+
     [HideInInspector] public Vector2 inputMove;
     [HideInInspector] public bool inputPhase;
 
@@ -30,7 +40,8 @@ public class PlatformerController2D : MonoBehaviour
     [Tooltip("Downwards acceleration.")]
     [SerializeField] float gravity = 40;
 
-
+    [Tooltip("Upwards acceleration.")]
+    [SerializeField] float floatiness = 0.3f;
 
     Rigidbody2D rb2d = null;
     SpriteRenderer sr = null;
@@ -38,11 +49,9 @@ public class PlatformerController2D : MonoBehaviour
 
     void Start()
     {
-        canMove = true;
         rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
-        //PlayerStatus.SetToState(PlayerStatus.States.Gas); //Set Start state
     }
 
     /// <summary>
@@ -52,25 +61,57 @@ public class PlatformerController2D : MonoBehaviour
     void FixedUpdate()
     {
         Vector2 vel = rb2d.velocity;
-        if (inputPhase) PlayerStatus.SwitchStates();
-        if (canMove)
-            if(!PlayerStatus.StateLocked())
-                vel.x = inputMove.x * speed;
 
-        switch (PlayerStatus.physicalState){
-            case PlayerStatus.States.Solid:
+        if (inputPhase && !locked) {
+            SwitchStates();
+        }
+        if (canMove) { 
+            vel.x = inputMove.x * speed; 
+        }
+
+        switch (physicalState){
+            case State.Solid:
                 vel.y += -gravity * Time.deltaTime;
 
                 break;
-            case PlayerStatus.States.Gas:
+            case State.Gas:
 
-                vel.y += gravity * Time.deltaTime * (float)0.3;
+
+                vel.y += gravity * Time.deltaTime * floatiness;
+
                 break;
         }
         rb2d.velocity = vel;
-
-        
-
-
     }
+
+    public void SwitchStates()
+    {
+        if (physicalState == State.Solid)
+        {
+            physicalState = State.Gas;
+        }
+        else
+        {
+            physicalState = State.Solid;
+        }
+    }
+
+    public void SetToState(State newState)
+    {
+        physicalState = newState;
+    }
+
+    public void LockSwitch()
+    {
+        //prevent player from switching states
+
+        locked = true;
+    }
+
+    public void UnlockSwitch()
+    {
+        //unlock ability to switch states
+        locked = false;
+    }
+
 }
