@@ -58,6 +58,7 @@ public class PlatformerController2D : MonoBehaviour
     void FixedUpdate()
     {
         Vector2 vel = rb2d.velocity;
+
         if (inputPhase && !locked) {
             SwitchStates();
         }
@@ -105,4 +106,5 @@ public class PlatformerController2D : MonoBehaviour
         //unlock ability to switch states
         locked = false;
     }
+
 }
