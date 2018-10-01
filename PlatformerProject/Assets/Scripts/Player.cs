@@ -9,20 +9,12 @@ using UnityEngine;
 [RequireComponent(typeof(PlatformerController2D))]
 public class Player : MonoBehaviour {
 
-    public enum PlayerStatus {
-        Solid,
-        Gas,
-        Dead,
-    }
-
     PlatformerController2D controller;
     SpriteRenderer[] sr;
-    PlayerStatus state;
 
     void Awake() {
         controller = GetComponent<PlatformerController2D>();
         sr = GetComponentsInChildren<SpriteRenderer>();
-        state = PlayerStatus.Solid;
     }
 	
     /// <summary>
