@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/FanButtonLevel.unity
     guid: 978aaa7e451b04731a3170b9c402837b
   - enabled: 1
+    path: Assets/Scenes/FanButtonLevel2.unity
+    guid: 17a62f349da1a4178aa44982bfa5e5af
+  - enabled: 1
     path: Assets/Scenes/TempZoneLevel.unity
     guid: e9069c90548e8474d88c17761ec8f854
   - enabled: 1
