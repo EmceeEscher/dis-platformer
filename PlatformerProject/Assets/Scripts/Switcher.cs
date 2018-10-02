@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ColdZone : MonoBehaviour {
+public class Switcher : MonoBehaviour {
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Only switches if the player is a gas
+        // Flip no matter what teh states
         PlatformerController2D objectWithStates = collision.GetComponent<PlatformerController2D>();
-        if (objectWithStates != null && objectWithStates.physicalState == PlatformerController2D.State.Gas)
+        if (objectWithStates != null)
         {
             objectWithStates.LockSwitch();
             Debug.Log("Entered temp zone");
@@ -23,16 +24,8 @@ public class ColdZone : MonoBehaviour {
         {
             objectWithStates.UnlockSwitch();
             Debug.Log("Exited temp zone");
+            objectWithStates.SwitchStates();
         }
     }
 
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }
