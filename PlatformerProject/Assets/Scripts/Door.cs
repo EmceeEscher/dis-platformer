@@ -5,8 +5,9 @@ using UnityEngine;
 public class Door : MonoBehaviour {
 
     public bool isHorizontal = true;
-    public float openingDistance = 100f;
     public bool flipDirection = false;
+    public float openingDistance = 100f;
+    public float openingTime = 1f;
 
     Vector2 startingPosition;
     Vector2 destinationPosition;
@@ -33,7 +34,7 @@ public class Door : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (opening || closing) {
-            doorProgress += Time.deltaTime;
+            doorProgress += Time.deltaTime / openingTime;
             if (doorProgress > 1.0f)
             {
                 doorProgress = 1.0f;

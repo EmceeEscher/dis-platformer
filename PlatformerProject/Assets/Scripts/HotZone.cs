@@ -25,13 +25,4 @@ public class HotZone : MonoBehaviour {
             Debug.Log("Exited temp zone");
         }
     }
-    // Use this for initialization
-    void Start () {
-
-	}
-	
-	// Update is called once per frame
-	void Update () {
-
-	}
 }
