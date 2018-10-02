@@ -9,6 +9,8 @@ public class GravityCounterPanel : MonoBehaviour {
 
     [SerializeField] Text counterText;
 
+
+
 	// Use this for initialization
 	void Start () {
         instance = this;
