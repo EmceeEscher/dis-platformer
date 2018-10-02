@@ -24,7 +24,6 @@ public class Switcher : MonoBehaviour {
         {
             objectWithStates.UnlockSwitch();
             Debug.Log("Exited temp zone");
-            objectWithStates.SwitchStates();
         }
     }
 
