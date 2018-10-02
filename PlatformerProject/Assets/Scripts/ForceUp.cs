@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HotZone : MonoBehaviour {
+public class ForceUp : MonoBehaviour {
 
 
     private void OnTriggerEnter2D(Collider2D collider)
