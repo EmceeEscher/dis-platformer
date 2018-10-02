@@ -17,7 +17,7 @@ public class InputModule2D : MonoBehaviour {
         controller = GetComponent<PlatformerController2D>();
     }
 	
-    void FixedUpdate() {
+    void Update() {
         Vector2 inputMove = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         if (inputMove.magnitude > 1) {
             inputMove.Normalize();
