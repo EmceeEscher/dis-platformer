@@ -19,7 +19,12 @@ public class GravityCounterPanel : MonoBehaviour {
 
     public void SetCount(int count) {
         if (counterText == null)
+        {
+            Debug.Log("counterText is null");
             return;
+        }
+            
+        Debug.Log("Incrementing text");
         counterText.text = "Gravity Toggles: " + count.ToString();
     }
 }
