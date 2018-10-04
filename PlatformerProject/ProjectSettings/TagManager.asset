@@ -15,7 +15,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Ground
   - 
   - 
   - 
@@ -41,4 +41,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Block
+    uniqueID: 3754377651
+    locked: 0
+  - name: Player
+    uniqueID: 3458730005
+    locked: 0
+  - name: Fadeout
+    uniqueID: 2836786467
     locked: 0
