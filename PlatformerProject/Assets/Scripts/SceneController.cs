@@ -33,9 +33,4 @@ public class SceneController : MonoBehaviour {
         yield return new WaitForSeconds(fadeinTime);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-
-    public void LoadFirstLevel() {
-        Debug.Log("am I in this function");
-        SceneManager.LoadScene(1);
-    }
 }
