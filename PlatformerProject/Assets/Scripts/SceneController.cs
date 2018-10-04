@@ -28,7 +28,7 @@ public class SceneController : MonoBehaviour {
         }
     }
 
-    IEnumerator ReloadLevel() {
+    public IEnumerator ReloadLevel() {
         fadeoutImage.CrossFadeAlpha(1f, fadeinTime, false);
         yield return new WaitForSeconds(fadeinTime);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);

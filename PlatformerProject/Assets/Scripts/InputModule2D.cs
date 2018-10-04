@@ -17,7 +17,7 @@ public class InputModule2D : MonoBehaviour {
         controller = GetComponent<PlatformerController2D>();
     }
 	
-    void FixedUpdate() {
+    void Update() {
         Vector2 inputMove = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         if (inputMove.magnitude > 1) {
             inputMove.Normalize();
@@ -26,7 +26,10 @@ public class InputModule2D : MonoBehaviour {
         bool inputPhase = Input.GetKeyDown("space");
         if (inputPhase) {
             gravityToggleCounter++;
-            if(GravityCounterPanel.instance != null) GravityCounterPanel.instance.SetCount(gravityToggleCounter);
+            if(GravityCounterPanel.instance != null) {
+                Debug.Log("Gravity toggle");
+                GravityCounterPanel.instance.SetCount(gravityToggleCounter);
+            }
         }
         controller.inputPhase = inputPhase;
     }

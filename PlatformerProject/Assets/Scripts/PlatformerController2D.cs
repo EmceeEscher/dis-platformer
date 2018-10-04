@@ -19,8 +19,8 @@ public class PlatformerController2D : MonoBehaviour
 
     public enum State
     {
-        Solid,
-        Gas,
+        Down,
+        Up,
         Dead,
     }
     public State physicalState;
@@ -67,10 +67,10 @@ public class PlatformerController2D : MonoBehaviour
         }
 
         switch (physicalState){
-            case State.Solid:
+            case State.Down:
                 vel.y += -gravity * Time.deltaTime;
                 break;
-            case State.Gas:            
+            case State.Up:            
                 vel.y += gravity * Time.deltaTime;
                 break;
         }
@@ -79,13 +79,13 @@ public class PlatformerController2D : MonoBehaviour
 
     public void SwitchStates()
     {
-        if (physicalState == State.Solid)
+        if (physicalState == State.Down)
         {
-            physicalState = State.Gas;
+            physicalState = State.Up;
         }
         else
         {
-            physicalState = State.Solid;
+            physicalState = State.Down;
         }
     }
 

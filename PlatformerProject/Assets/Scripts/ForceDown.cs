@@ -8,11 +8,11 @@ public class ForceDown : MonoBehaviour {
     {
         // Only switches if the player is a gas
         PlatformerController2D objectWithStates = collision.GetComponent<PlatformerController2D>();
-        if (objectWithStates != null && objectWithStates.physicalState == PlatformerController2D.State.Gas)
+        if (objectWithStates != null)
         {
             objectWithStates.LockSwitch();
             Debug.Log("Entered temp zone");
-            objectWithStates.SwitchStates();
+            if(objectWithStates.physicalState == PlatformerController2D.State.Up) objectWithStates.SwitchStates();
         }
     }
 
