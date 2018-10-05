@@ -7,17 +7,18 @@ public class GravityCounterPanel : MonoBehaviour {
 
     public static GravityCounterPanel instance;
 
-    [SerializeField] Text counterText;
+    public Text counterText;
 
-
-
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         instance = this;
         SetCount(0);
-	}
+        Debug.Log("Text is " + counterText);
+    }
 
-    public void SetCount(int count) {
+    public void SetCount(int count)
+    {
         if (counterText == null)
         {
             Debug.Log("counterText is null");
