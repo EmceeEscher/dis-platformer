@@ -7,17 +7,7 @@ public class Teleporter : MonoBehaviour {
 
     public float timeToFade = 1f;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
-    private IEnumerator OnTriggerEnter2D(Collider2D collider)
+    IEnumerator OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.tag.Equals("Player")) {
             Player playerScript = collider.GetComponent<Player>();

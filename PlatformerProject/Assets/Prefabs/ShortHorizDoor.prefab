@@ -79,8 +79,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isHorizontal: 1
-  openingDistance: 1.5
   flipDirection: 1
+  openingDistance: 1.5
+  openingTime: 1
 --- !u!212 &212454829890465704
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -115,7 +116,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 1d4902656356c4349a75d85a94555dea, type: 3}
   m_Color: {r: 1, g: 0, b: 0.9411765, a: 1}
   m_FlipX: 0

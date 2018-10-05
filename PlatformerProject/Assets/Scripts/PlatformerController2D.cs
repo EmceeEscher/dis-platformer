@@ -42,13 +42,21 @@ public class PlatformerController2D : MonoBehaviour
 
     Rigidbody2D rb2d = null;
     SpriteRenderer sr = null;
-    Animator anim = null;
 
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
+    }
+
+    void Update()
+    {
+        // this has to be in Update instead of FixedUpdate or else it will 
+        // occasionally miss switches
+        if (inputPhase && !locked)
+        {
+            SwitchStates();
+        }
     }
 
     /// <summary>
@@ -59,9 +67,6 @@ public class PlatformerController2D : MonoBehaviour
     {
         Vector2 vel = rb2d.velocity;
 
-        if (inputPhase && !locked) {
-            SwitchStates();
-        }
         if (canMove) { 
             vel.x = inputMove.x * speed; 
         }
@@ -94,16 +99,15 @@ public class PlatformerController2D : MonoBehaviour
         physicalState = newState;
     }
 
+    //prevent player from switching states
     public void LockSwitch()
     {
-        //prevent player from switching states
-
         locked = true;
     }
 
+    //unlock ability to switch states
     public void UnlockSwitch()
     {
-        //unlock ability to switch states
         locked = false;
     }
 

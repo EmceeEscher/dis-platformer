@@ -28,7 +28,6 @@ public class InputModule2D : MonoBehaviour {
         if (inputPhase) {
             gravityToggleCounter++;
             if(GravityCounterPanel.instance != null) {
-                Debug.Log("Gravity toggle");
                 GravityCounterPanel.instance.SetCount(gravityToggleCounter);
             }
         }

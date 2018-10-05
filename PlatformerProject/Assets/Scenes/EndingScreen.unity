@@ -326,7 +326,9 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'TILES: KENNEY.NL
 
-    FONT: TRIPFIVE BY PIXELMUSH'
+    FONT: TRIPFIVE BY PIXELMUSH
+
+    SOUNDS: FREESOUND.ORG'
 --- !u!222 &792005953
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -402,7 +404,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: PRESS 'S' TO RESTART GAME
+  m_Text: PRESS 'R' TO RESTART GAME
 --- !u!222 &1002731753
 CanvasRenderer:
   m_ObjectHideFlags: 0

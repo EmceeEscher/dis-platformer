@@ -9,7 +9,6 @@ public class SceneController : MonoBehaviour {
     public Image fadeoutImage;
     public float fadeinTime = 1f;
 
-    // Use this for initialization
     void Start () {
         // fadeoutImage starts out invisible (so we can see the scene in the 
         // editor while working), immediately turns to opaque black on scene
@@ -20,7 +19,6 @@ public class SceneController : MonoBehaviour {
         fadeoutImage.CrossFadeAlpha(0f, fadeinTime, false);
 	}
 	
-	// Update is called once per frame
 	void Update () {
         if (Input.GetKeyDown("r"))
         {

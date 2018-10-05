@@ -5,24 +5,23 @@ using UnityEngine;
 public class ForceUp : MonoBehaviour {
 
 
-    private void OnTriggerEnter2D(Collider2D collider)
+    void OnTriggerEnter2D(Collider2D collider)
     {
-        // Only switch if the player is a solid
+        // Only switch if the player is in the Down state
         PlatformerController2D objectWithStates = collider.GetComponent<PlatformerController2D>();
         if (objectWithStates != null)
         {
             objectWithStates.LockSwitch();
-            Debug.Log("Entered temp zone");
             if(objectWithStates.physicalState == PlatformerController2D.State.Down) objectWithStates.SwitchStates();
         }
     }
-    private void OnTriggerExit2D(Collider2D collider)
+
+    void OnTriggerExit2D(Collider2D collider)
     {
         PlatformerController2D objectWithStates = collider.GetComponent<PlatformerController2D>();
         if (objectWithStates != null)
         {
             objectWithStates.UnlockSwitch();
-            Debug.Log("Exited temp zone");
         }
     }
 }

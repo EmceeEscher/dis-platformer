@@ -4,25 +4,23 @@ using UnityEngine;
 
 public class ForceDown : MonoBehaviour {
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        // Only switches if the player is a gas
+        // Only switches if the player is in the Up state
         PlatformerController2D objectWithStates = collision.GetComponent<PlatformerController2D>();
         if (objectWithStates != null)
         {
             objectWithStates.LockSwitch();
-            Debug.Log("Entered temp zone");
             if(objectWithStates.physicalState == PlatformerController2D.State.Up) objectWithStates.SwitchStates();
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    void OnTriggerExit2D(Collider2D collision)
     {
         PlatformerController2D objectWithStates = collision.GetComponent<PlatformerController2D>();
         if (objectWithStates != null)
         {
             objectWithStates.UnlockSwitch();
-            Debug.Log("Exited temp zone");
         }
     }
 

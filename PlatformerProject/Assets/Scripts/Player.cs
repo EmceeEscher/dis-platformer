@@ -3,19 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// Player script. Manages the state and interaction with environment of the player.
+/// Player script. Manages the graphical state of the player.
 /// Based on Benno Lueders' Player.cs script.
 /// </summary>
 [RequireComponent(typeof(PlatformerController2D))]
 public class Player : MonoBehaviour
 {
-    //Maybe use Singleton?
     PlatformerController2D controller;
     SpriteRenderer sr;
 
     void Awake()
     {
-        controller = GetComponent<PlatformerController2D>();
         sr = GetComponent<SpriteRenderer>();
     }
 
@@ -24,7 +22,6 @@ public class Player : MonoBehaviour
     /// </summary>
     public void Die()
     {
-        
         Destroy(gameObject);
     }
 

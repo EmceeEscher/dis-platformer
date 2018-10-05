@@ -14,7 +14,6 @@ public class Button : MonoBehaviour {
     bool shouldClose;
     int numObjectsOnButton;
 
-	// Use this for initialization
 	void Start () {
 		sr = GetComponent<SpriteRenderer>();
 		sr.sprite = upSprite;
@@ -39,7 +38,6 @@ public class Button : MonoBehaviour {
         }
 	}
 
-	// Update is called once per frame
 	void Update () {
         if (shouldClose)
         {
