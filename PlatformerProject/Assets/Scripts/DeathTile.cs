@@ -5,10 +5,12 @@ using UnityEngine;
 public class DeathTile : MonoBehaviour {
 
     [SerializeField] SceneController reloader;
+    public AudioClip clip;
+    AudioSource audio;
 
 	// Use this for initialization
 	void Start () {
-		
+        audio = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -21,6 +23,8 @@ public class DeathTile : MonoBehaviour {
         if (collision.collider.tag.Equals("Player"))
         {
             collision.collider.GetComponent<Player>().Die();
+            // play sound
+            audio.PlayOneShot(clip);
             if (reloader != null) {
                 StartCoroutine(reloader.ReloadLevel());
             }

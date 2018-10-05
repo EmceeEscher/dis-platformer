@@ -15,13 +15,6 @@ public class BlowItems : MonoBehaviour {
     {
         foreach(Collider2D item in affectedItems) {
             Rigidbody2D body = item.attachedRigidbody;
-
-            // if player
-                // check state. if gas
-                    // more affected
-                // if solid
-                    // less affected
-
             body.AddForce(windForce);
         }
     }

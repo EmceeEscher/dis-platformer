@@ -22,6 +22,7 @@ public class InputModule2D : MonoBehaviour {
         if (inputMove.magnitude > 1) {
             inputMove.Normalize();
         }
+
         controller.inputMove = inputMove;
         bool inputPhase = Input.GetKeyDown("space");
         if (inputPhase) {

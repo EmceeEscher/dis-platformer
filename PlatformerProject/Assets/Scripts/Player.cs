@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
     /// </summary>
     public void Die()
     {
+        
         Destroy(gameObject);
     }
 
