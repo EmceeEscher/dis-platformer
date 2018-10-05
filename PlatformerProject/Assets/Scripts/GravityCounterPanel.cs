@@ -26,6 +26,6 @@ public class GravityCounterPanel : MonoBehaviour {
         }
             
         Debug.Log("Incrementing text");
-        counterText.text = "Gravity Toggles: " + count.ToString();
+        counterText.text = "GRAVITY TOGGLES: " + count.ToString();
     }
 }
