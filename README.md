@@ -2,19 +2,15 @@
 
 A game made for the DIS Game Development class.
 
-Developed by: 
+## Developed by: 
 
-Aaron Paskin
+Aaron Paskin  
+Allen Gueco  
+Jacob Brunette  
+Julia Friend  
 
-Allen Gueco
+## Other contributions:
 
-Jacob Brunette
-
-Julia Friend
-
-
-Tiles: kenney.nl
-
-Font: Tripfive BY Pixelmush
-
+Tiles: kenney.nl  
+Font: Tripfive by Pixelmush  
 Sounds: freesound.org
